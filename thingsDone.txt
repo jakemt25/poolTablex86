@@ -1,0 +1,17 @@
+x64:
+Debugging -> Command Arguments: "../data/shrunkCroppedPool1.png"
+C/C++ -> Additional Include Directories: $(OPENCV_DIR)\build\include
+Linker -> General -> Additional Library Directories: $(OPENCV_DIR)\build\x64\vc14\lib;
+Linker -> Input -> Additional Dependencies: opencv_world310d.lib
+
+x86:
+Debugging -> Command Arguments: "../data/shrunkCroppedPool1.png"
+C/C++ -> Additional Include Directories: $(OPENCV_DIR)\build\include
+Linker -> General -> Additional Library Directories: $(OPENCV_DIR)\build\x86\vc14\lib;
+Linker -> Input -> Additional Dependencies: Debug\opencv_world310d.lib
+
+-to get x86 to work:
+	- I used cmake to make the x86/v14 folders
+	- I had to copy the opencv_world.dll into the Debug folder of the project
+	- I removed the path to the x64 bin and added the x86 one instead
+
